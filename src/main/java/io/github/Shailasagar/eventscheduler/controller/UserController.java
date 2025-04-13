@@ -22,10 +22,10 @@ public class UserController {
     /**
      * Create a new user.
      */
-    @PostMapping
+    @PostMapping("/users")
     public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
         User savedUser = userService.createUser(user);
-        return ResponseEntity.ok(savedUser);
+        return ResponseEntity.ok(userService.createUser(user));
     }
 
     /**
